@@ -1,0 +1,415 @@
+    D128        bne 0x0002CFAC
+--- main.c -- 674 ------------------------------------------
+NORMAL_BEACON[5] = serial_no[3];
+if(serial_no_dummy[3] == 0x0E && serial_no_dummy[2] == 0xE6){
+    F89D100A    ldrb.w r1, [sp, #10]
+    29E6        cmp r1, #0xE6
+    D124        bne 0x0002CFAC
+--- main.c -- 679 ------------------------------------------
+NORMAL_BEACON[2] = serial_no_dummy[3];
+    709A        strb r2, [r3, #2]
+--- main.c -- 681 ------------------------------------------
+NORMAL_BEACON[3] = serial_no_dummy[3];
+    70DA        strb r2, [r3, #3]
+--- main.c -- 683 ------------------------------------------
+NORMAL_BEACON[4] = serial_no_dummy[1];
+    F89D2009    ldrb.w r2, [sp, #9]
+    711A        strb r2, [r3, #4]
+--- main.c -- 685 ------------------------------------------
+NORMAL_BEACON[5] = serial_no_dummy[0];
+NRF_NVMC->CONFIG = 0x00000002;
+    4C27        ldr r4, =0x4001E000
+--- main.c -- 686 ------------------------------------------
+NORMAL_BEACON[5] = serial_no_dummy[0];
+    F89D2008    ldrb.w r2, [sp, #8]
+    715A        strb r2, [r3, #5]
+--- main.c -- 687 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000002;
+    2302        movs r3, #2
+    F8C43504    str.w r3, [r4, #0x504]
+--- main.c -- 689 ------------------------------------------
+NRF_NVMC->ERASEUICR = 0x00000001;
+    2301        movs r3, #1
+    F8C43514    str.w r3, [r4, #0x514]
+--- main.c -- 691 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000001;
+memcpy((uint32_t *)&(NRF_UICR->CUSTOMER[1]), (uint8_t *)serial_no_dummy , 4);
+    2204        movs r2, #4
+--- main.c -- 692 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000001;
+    F8C43504    str.w r3, [r4, #0x504]
+--- main.c -- 693 ------------------------------------------
+memcpy((uint32_t *)&(NRF_UICR->CUSTOMER[1]), (uint8_t *)serial_no_dummy , 4);
+    A902        add r1, sp, #8
+    481D        ldr r0, =0x10001084
+    F002FA92    bl 0x0002F4B2 <memcpy>
+--- main.c -- 695 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000000;
+    2300        movs r3, #0
+    F8C43504    str.w r3, [r4, #0x504]
+--- main.c -- 697 ------------------------------------------
+printf("\n --%X %X %X %X", serial_no_dummy[0],serial_no_dummy[1],serial_no_dummy[2],serial_no_dummy[3] );
+    F89D300B    ldrb.w r3, [sp, #11]
+    9300        str r3, [sp]
+    F89D2009    ldrb.w r2, [sp, #9]
+    F89D300A    ldrb.w r3, [sp, #10]
+    F89D1008    ldrb.w r1, [sp, #8]
+    481A        ldr r0, =0x00031A2E
+    F000F9F6    bl 0x0002D398 <printf>
+--- main.c -- 728 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000000;
+}
+}
+NRF_NVMC->ERASEUICR = 0x00000000;
+    4B17        ldr r3, =0x4001E000
+    2200        movs r2, #0
+    F8C32514    str.w r2, [r3, #0x514]
+--- main.c -- 733 ------------------------------------------
+}
+    B004        add sp, sp, #16
+    BD70        pop {r4-r6, pc}
+--- main.c -- 710 ------------------------------------------
+if(serial_no_dummy[3] == 0x0E && serial_no_dummy[2] == 0xE6){
+    2A0E        cmp r2, #14
+    D1F7        bne 0x0002CFAC
+    F89D100A    ldrb.w r1, [sp, #10]
+    29E6        cmp r1, #0xE6
+    D1F3        bne 0x0002CFAC
+--- main.c -- 711 ------------------------------------------
+NORMAL_BEACON[2] = serial_no_dummy[3];
+    709A        strb r2, [r3, #2]
+--- main.c -- 713 ------------------------------------------
+NORMAL_BEACON[3] = serial_no_dummy[3];
+    70DA        strb r2, [r3, #3]
+--- main.c -- 715 ------------------------------------------
+NORMAL_BEACON[4] = serial_no_dummy[1];
+    F89D2009    ldrb.w r2, [sp, #9]
+    711A        strb r2, [r3, #4]
+--- main.c -- 717 ------------------------------------------
+NORMAL_BEACON[5] = serial_no_dummy[0];
+NRF_NVMC->CONFIG = 0x00000002;
+    4C0F        ldr r4, =0x4001E000
+--- main.c -- 718 ------------------------------------------
+NORMAL_BEACON[5] = serial_no_dummy[0];
+    F89D2008    ldrb.w r2, [sp, #8]
+    715A        strb r2, [r3, #5]
+--- main.c -- 719 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000002;
+    2302        movs r3, #2
+    F8C43504    str.w r3, [r4, #0x504]
+--- main.c -- 721 ------------------------------------------
+NRF_NVMC->ERASEUICR = 0x00000001;
+    2301        movs r3, #1
+    F8C43514    str.w r3, [r4, #0x514]
+--- main.c -- 723 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000001;
+memcpy((uint32_t *)&(NRF_UICR->CUSTOMER[1]), (uint8_t *)serial_no_dummy , 4);
+    2204        movs r2, #4
+--- main.c -- 724 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000001;
+    F8C43504    str.w r3, [r4, #0x504]
+--- main.c -- 725 ------------------------------------------
+memcpy((uint32_t *)&(NRF_UICR->CUSTOMER[1]), (uint8_t *)serial_no_dummy , 4);
+    A902        add r1, sp, #8
+    4805        ldr r0, =0x10001084
+    F002FA61    bl 0x0002F4B2 <memcpy>
+--- main.c -- 727 ------------------------------------------
+NRF_NVMC->CONFIG = 0x00000000;
+    2300        movs r3, #0
+    F8C43504    str.w r3, [r4, #0x504]
+    E7D9        b 0x0002CFAC
+    19F1        adds r1, r6, r7
+    0003        movs r3, r0
+    26D0        movs r6, #0xD0
+    2000        movs r0, #0
+    10001084    .word 0x10001084
+    1A20        subs r0, r4, r0
+    0003        movs r3, r0
+    2660        movs r6, #0x60
+    2000        movs r0, #0
+    4001E000    .word 0x4001E000
+    00031A2E    .word 0x00031A2E
+--- main.c -- 743 ------------------------------------------
+uint32_t * ptr = &serial_no;
+int no = *ptr;
+sprintf(sno__,"_%d", no);
+    B51F        push {r0-r4, lr}
+    4B0B        ldr r3, =0x200026D0 <serial_no>
+    490B        ldr r1, =0x000319FA
+    681A        ldr r2, [r3]
+    A801        add r0, sp, #4
+    F002F913    bl 0x0002F248 <sprintf>
+--- main.c -- 748 ------------------------------------------
+strcat(sno__, ">");
+    490A        ldr r1, =0x000319A8
+    A801        add r0, sp, #4
+    F002F924    bl 0x0002F272 <strcat>
+--- main.c -- 750 ------------------------------------------
+printf("%s", sno__);
+    A901        add r1, sp, #4
+    4808        ldr r0, =0x00031903
+    F000F9B3    bl 0x0002D398 <printf>
+--- main.c -- 752 ------------------------------------------
+strncat(device_description, sno__, 9);
+    2209        movs r2, #9
+    A901        add r1, sp, #4
+    4807        ldr r0, =0x20002677 <device_description>
+    F002F95F    bl 0x0002F2FA <strncat>
+--- main.c -- 754 ------------------------------------------
+}
+    B005        add sp, sp, #20
+    F85DFB04    pop.w {pc}
+    BF00        nop
+    200026D0    .word 0x200026D0
+    000319FA    .word 0x000319FA
+    000319A8    .word 0x000319A8
+    00031903    .word 0x00031903
+    20002677    .word 0x20002677
+--- main.c -- 762 ------------------------------------------
+// leds_init();
+// printf("Porter example started");
+// NRF_NVMC->ICACHECNF = 1;
+timers_init();
+    B500        push {lr}
+    B08B        sub sp, sp, #0x2C
+--- main.c -- 209 ------------------------------------------
+ret_code_t err_code = app_timer_init();
+    F7FAF88C    bl 0x00027178 <app_timer_init>
+--- main.c -- 210 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D066
+    F7F9FE33    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 211 ------------------------------------------
+APP_ERROR_CHECK(nrf_drv_clock_init());
+    F7FBF9CB    bl 0x00028400 <nrf_drv_clock_init>
+    B108        cbz r0, 0x0002D070
+    F7F9FE2E    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 212 ------------------------------------------
+nrf_drv_clock_lfclk_request(NULL);
+    2000        movs r0, #0
+    F7FBF9E1    bl 0x00028438 <nrf_drv_clock_lfclk_request>
+--- main.c -- 763 ------------------------------------------
+// leds_init();
+// printf("Porter example started");
+// NRF_NVMC->ICACHECNF = 1;
+timers_init();
+APP_ERROR_CHECK(nrf_drv_gpiote_init());
+    F7FBFB79    bl 0x0002876C <nrfx_gpiote_init>
+    B108        cbz r0, 0x0002D080
+    F7F9FE26    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 768 ------------------------------------------
+pins_init();
+    F7FCFC6A    bl 0x00029958 <pins_init>
+--- main.c -- 769 ------------------------------------------
+nrf_gpio_cfg_output(CP1);
+    4A4C        ldr r2, =0x50000300
+    2303        movs r3, #3
+    F8C23704    str.w r3, [r2, #0x704]
+--- nrf_gpio.h -- 520 --------------------------------------
+__STATIC_INLINE void nrf_gpio_cfg_output(uint32_t pin_number)
+{
+nrf_gpio_cfg(
+    F04F42A0    mov.w r2, #0x50000000
+    F8C23764    str.w r3, [r2, #0x764]
+--- nrf_gpio.h -- 514 --------------------------------------
+reg->PIN_CNF[pin_number] = ((uint32_t)dir << GPIO_PIN_CNF_DIR_Pos)
+    F7FFFAF2    bl 0x0002C67C <coaster_buttons_init>
+--- main.c -- 770 ------------------------------------------
+nrf_gpio_cfg_output(CP2);
+coaster_buttons_init();
+// load_test_details();
+// app_timer_create(&my_timer, APP_TIMER_MODE_REPEATED, battery_to_dis);
+phy_init();
+    F7FFFA88    bl 0x0002C5AC <phy_init>
+--- main.c -- 775 ------------------------------------------
+device_id_get();
+    F7FFFF28    bl 0x0002CEF0 <device_id_get>
+--- main.c -- 776 ------------------------------------------
+// buttons_init();
+power_management_init();
+    F7FAFC4A    bl 0x00027938 <nrf_pwr_mgmt_init>
+--- main.c -- 619 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D0AA
+    F7F9FE11    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 774 ------------------------------------------
+phy_init();
+device_id_get();
+// buttons_init();
+power_management_init();
+ble_stack_init();
+    F001F8BB    bl 0x0002E224 <nrf_sdh_enable_request>
+--- main.c -- 581 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D0B4
+    F7F9FE0C    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 582 ------------------------------------------
+// Configure the BLE stack using the default settings.
+// Fetch the start address of the application RAM.
+uint32_t ram_start = 0;
+    2300        movs r3, #0
+--- main.c -- 586 ------------------------------------------
+err_code = nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start);
+    A903        add r1, sp, #12
+    2001        movs r0, #1
+--- main.c -- 585 ------------------------------------------
+uint32_t ram_start = 0;
+    9303        str r3, [sp, #12]
+--- main.c -- 586 ------------------------------------------
+err_code = nrf_sdh_ble_default_cfg_set(APP_BLE_CONN_CFG_TAG, &ram_start);
+    F001F93A    bl 0x0002E334 <nrf_sdh_ble_default_cfg_set>
+--- main.c -- 587 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D0C6
+    F7F9FE03    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 588 ------------------------------------------
+// Enable BLE stack.
+err_code = nrf_sdh_ble_enable(&ram_start);
+    A803        add r0, sp, #12
+    F001FA04    bl 0x0002E4D4 <nrf_sdh_ble_enable>
+--- main.c -- 591 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D0D2
+    F7F9FDFD    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 775 ------------------------------------------
+device_id_get();
+// buttons_init();
+power_management_init();
+ble_stack_init();
+gap_params_init();
+    2208        movs r2, #8
+    2100        movs r1, #0
+    A803        add r0, sp, #12
+    F002FA14    bl 0x0002F504 <memset>
+--- main.c -- 239 ------------------------------------------
+gap_conn_params.conn_sup_timeout = CONN_SUP_TIMEOUT;
+    4A37        ldr r2, =0x00A00050
+    4B38        ldr r3, =0x01900003
+--- main.c -- 240 ------------------------------------------
+err_code = sd_ble_gap_ppcp_set(&gap_conn_params);
+    A803        add r0, sp, #12
+--- main.c -- 238 ------------------------------------------
+gap_conn_params.slave_latency = SLAVE_LATENCY;
+    E9CD2303    strd r2, r3, [sp, #12]
+--- main.c -- 239 ------------------------------------------
+gap_conn_params.conn_sup_timeout = CONN_SUP_TIMEOUT;
+err_code = sd_ble_gap_ppcp_set(&gap_conn_params);
+    F7FFFDEB    bl 0x0002CCC0 <sd_ble_gap_ppcp_set>
+--- main.c -- 242 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D0F0
+    F7F9FDEE    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 776 ------------------------------------------
+// buttons_init();
+power_management_init();
+ble_stack_init();
+gap_params_init();
+gatt_init();
+    2100        movs r1, #0
+    4834        ldr r0, =0x20003B44 <m_gatt>
+    F000FE6A    bl 0x0002DDCC <nrf_ble_gatt_init>
+--- main.c -- 251 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D0FE
+    F7F9FDE7    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 777 ------------------------------------------
+power_management_init();
+ble_stack_init();
+gap_params_init();
+gatt_init();
+services_init();
+    2300        movs r3, #0
+    E9CD3303    strd r3, r3, [sp, #12]
+--- main.c -- 378 ------------------------------------------
+err_code = nrf_ble_qwr_init(&m_qwr, &qwr_init);
+    A902        add r1, sp, #8
+--- main.c -- 376 ------------------------------------------
+qwr_init.error_handler = nrf_qwr_error_handler;
+    4B30        ldr r3, =0x0002CCF1
+--- main.c -- 377 ------------------------------------------
+err_code = nrf_ble_qwr_init(&m_qwr, &qwr_init);
+    4830        ldr r0, =0x20003B74 <m_qwr>
+--- main.c -- 376 ------------------------------------------
+qwr_init.error_handler = nrf_qwr_error_handler;
+    9302        str r3, [sp, #8]
+--- main.c -- 377 ------------------------------------------
+err_code = nrf_ble_qwr_init(&m_qwr, &qwr_init);
+    F000FF54    bl 0x0002DFB8 <nrf_ble_qwr_init>
+--- main.c -- 379 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D116
+    F7F9FDDB    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 380 ------------------------------------------
+// Initialize LBS.
+init.led_write_handler = led_write_handler;
+    4B2E        ldr r3, =0x0002CD0D
+--- main.c -- 383 ------------------------------------------
+// init.button_write_handler = button_write_fn;
+err_code = ble_lbs_init(&m_lbs, &init);
+    482E        ldr r0, =0x20003B58 <m_lbs>
+--- main.c -- 382 ------------------------------------------
+init.led_write_handler = led_write_handler;
+    9303        str r3, [sp, #12]
+--- main.c -- 383 ------------------------------------------
+// init.button_write_handler = button_write_fn;
+err_code = ble_lbs_init(&m_lbs, &init);
+    A903        add r1, sp, #12
+    F000FFE5    bl 0x0002E0EC <ble_lbs_init>
+--- main.c -- 386 ------------------------------------------
+APP_ERROR_CHECK(err_code);
+    B108        cbz r0, 0x0002D128
+    F7F9FDD2    bl 0x00026CCC <app_error_handler_bare>
+--- main.c -- 778 ------------------------------------------
+ble_stack_init();
+gap_params_init();
+gatt_init();
+services_init();
+advertising_init();
+    F7FFFDF4    bl 0x0002CD14 <advertising_init>
+--- main.c -- 783 ------------------------------------------
+conn_params_init();
+    221C        movs r2, #28
+    2100        movs r1, #0
+    A803        add r0, sp, #12
+    F002F9E7    bl 0x0002F504 <memset>
+--- main.c -- 434 ------------------------------------------
+cp_init.first_conn_params_update_delay = FIRST_CONN_PARAMS_UPDATE_DELAY;
+    2300        movs r3, #0
+    F44F3220    mov.w r2, #0x28000
+    E9CD3203    strd r3, r2, [sp, #12]
+--- main.c -- 435 ------------------------------------------
+cp_init.next_conn_params_update_delay = NEXT_CONN_PARAMS_UPDATE_DELAY;
+cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
+cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;
+    F8AD301A    strh.w r3, [sp, #26]
+--- main.c -- 435 ------------------------------------------
+cp_init.next_conn_params_update_delay = NEXT_CONN_PARAMS_UPDATE_DELAY;
+    F44F3240    mov.w r2, #0x30000
+--- main.c -- 436 ------------------------------------------
+cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
+cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;
+cp_init.disconnect_on_fail = false;
+    F88D301C    strb.w r3, [sp, #28]
+--- main.c -- 439 ------------------------------------------
+cp_init.evt_handler = on_conn_params_evt;
+    4B22        ldr r3, =0x0002CED1
+--- main.c -- 435 ------------------------------------------
+cp_init.next_conn_params_update_delay = NEXT_CONN_PARAMS_UPDATE_DELAY;
+    9205        str r2, [sp, #20]
+--- main.c -- 436 ------------------------------------------
+cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
+cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;
+cp_init.disconnect_on_fail = false;
+cp_init.evt_handler = on_conn_params_evt;
+    9308        str r3, [sp, #32]
+--- main.c -- 436 ------------------------------------------
+cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
+    2203        movs r2, #3
+--- main.c -- 437 ------------------------------------------
+cp_init.start_on_notify_cccd_handle = BLE_GATT_HANDLE_INVALID;
+cp_init.disconnect_on_fail = false;
+cp_init.evt_handler = on_conn_params_evt;
+cp_init.error_handler = conn_params_error_handler;
+    4B21        ldr r3, =0x0002CCF5
+--- main.c -- 436 ------------------------------------------
+cp_init.max_conn_params_update_count = MAX_CONN_PARAMS_UPDATE_COUNT;
